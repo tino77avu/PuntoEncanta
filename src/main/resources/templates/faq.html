@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: base(~{::content})}">
+<head>
+    <title>Preguntas frecuentes - PuntoEncanta</title>
+</head>
+<body>
+    <div th:fragment="content">
+        <!-- Hero Section -->
+        <section class="hero" style="padding: 120px 0 60px;">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Preguntas frecuentes</h1>
+                    <p class="hero-subtitle">Respuestas a las preguntas más comunes sobre nuestros polos piqué bordados.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="faq">
+            <div class="container">
+                <h2 class="section-title">Preguntas frecuentes</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Puedo pedir menos de 12?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Por producción y bordado trabajamos desde 12 unidades.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Puedo mezclar colores?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, siempre que se respete mínimo 3 por color.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Qué formato de logo debo enviar?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>PNG/JPG está bien. Si tienes PDF/AI mejor. Si está borroso, lo ajustamos.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Puedo mezclar tallas?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, puedes combinar tallas dentro del mismo color.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Qué tallas tienen disponibles?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Trabajamos con tallas completas según disponibilidad del proveedor. Las tallas estándar incluyen:</p>
+                            <p><strong>Hombre:</strong> S, M, L, XL, XXL</p>
+                            <p><strong>Mujer:</strong> S, M, L, XL, XXL</p>
+                            <p>Las medidas específicas pueden variar según el modelo. Te enviamos la guía de tallas al cotizar.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Tienen polos para hombre y mujer?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, trabajamos polos piqué tanto para hombre como para mujer. También ofrecemos opciones unisex. Puedes especificar en tu pedido la distribución por género si lo requieres.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Hacen bordado grande en espalda?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, es opcional y se cotiza según tamaño y puntadas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a th:href="@{/cotizar}" class="btn-primary btn-large">Tengo más preguntas, quiero cotizar</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

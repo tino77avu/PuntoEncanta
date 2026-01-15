@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <header th:fragment="header" class="header" id="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a th:href="@{/}">
+                            <img th:src="@{/images/Logo.png}" alt="PuntoEncanta" class="logo-img">
+                        </a>
+                    </div>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li>
+                            <a th:href="@{/}" 
+                               th:classappend="${#httpServletRequest != null and (#httpServletRequest.requestURI == '/' or #httpServletRequest.requestURI == '')} ? 'nav-link active' : 'nav-link'">
+                                Inicio
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/polos}" 
+                               th:classappend="${#httpServletRequest != null and #strings.contains(#httpServletRequest.requestURI, '/polos')} ? 'nav-link active' : 'nav-link'">
+                                Productos
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/bordado}" 
+                               th:classappend="${#httpServletRequest != null and #strings.contains(#httpServletRequest.requestURI, '/bordado')} ? 'nav-link active' : 'nav-link'">
+                                Bordado
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/como-pedir}" 
+                               th:classappend="${#httpServletRequest != null and #strings.contains(#httpServletRequest.requestURI, '/como-pedir')} ? 'nav-link active' : 'nav-link'">
+                                Cómo pedir
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/portafolio}" 
+                               th:classappend="${#httpServletRequest != null and #strings.contains(#httpServletRequest.requestURI, '/portafolio')} ? 'nav-link active' : 'nav-link'">
+                                Portafolio
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/faq}" 
+                               th:classappend="${#httpServletRequest != null and #strings.contains(#httpServletRequest.requestURI, '/faq')} ? 'nav-link active' : 'nav-link'">
+                                Preguntas
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/cotizar}" 
+                               th:classappend="${#httpServletRequest != null and #strings.contains(#httpServletRequest.requestURI, '/cotizar')} ? 'nav-link active' : 'nav-link'">
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>

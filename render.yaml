@@ -1,0 +1,17 @@
+# Render Blueprint para despliegue automático
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: puntoencanta
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    envVars:
+      - key: PORT
+        sync: false
+      - key: WHATSAPP_NUMBER
+        value: 51999999999
+        sync: false
+    healthCheckPath: /

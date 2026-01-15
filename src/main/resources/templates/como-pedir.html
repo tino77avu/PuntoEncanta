@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: base(~{::content})}">
+<head>
+    <title>Cómo pedir - PuntoEncanta</title>
+</head>
+<body>
+    <div th:fragment="content">
+        <!-- Hero Section -->
+        <section class="hero" style="padding: 120px 0 60px;">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Cómo pedir</h1>
+                    <p class="hero-subtitle">Proceso simple en 4 pasos para realizar tu pedido de polos piqué bordados.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="como-pedir">
+            <div class="container">
+                <h2 class="section-title">Pide en 4 pasos</h2>
+                <div class="pasos-grid">
+                    <div class="paso-card">
+                        <div class="paso-number">1</div>
+                        <h3>Envíanos tu logo</h3>
+                        <p>PNG/JPG/PDF/AI si tienes</p>
+                    </div>
+                    <div class="paso-card">
+                        <div class="paso-number">2</div>
+                        <h3>Elige cantidades y colores</h3>
+                        <p>Mínimo 12 unidades</p>
+                    </div>
+                    <div class="paso-card">
+                        <div class="paso-number">3</div>
+                        <h3>Confirmamos diseño y bordado</h3>
+                        <p>Te enviamos vista previa</p>
+                    </div>
+                    <div class="paso-card">
+                        <div class="paso-number">4</div>
+                        <h3>Producción y entrega</h3>
+                        <p>Según volumen</p>
+                    </div>
+                </div>
+                <div class="pasos-button">
+                    <a th:href="@{/cotizar}" class="btn-primary btn-large">Quiero cotizar</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

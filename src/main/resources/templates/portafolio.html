@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: base(~{::content})}">
+<head>
+    <title>Portafolio - PuntoEncanta</title>
+</head>
+<body>
+    <div th:fragment="content">
+        <!-- Hero Section -->
+        <section class="hero" style="padding: 120px 0 60px;">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Portafolio</h1>
+                    <p class="hero-subtitle">Algunos ejemplos de bordados corporativos y personalizados realizados por PuntoEncanta.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="portafolio">
+            <div class="container">
+                <h2 class="section-title">Trabajos recientes</h2>
+                <p class="section-text">Algunos ejemplos de bordados corporativos y personalizados.</p>
+                <div class="portafolio-grid">
+                    <div class="portafolio-item">
+                        <div class="portafolio-placeholder">
+                            <span>Logos corporativos (pecho)</span>
+                        </div>
+                    </div>
+                    <div class="portafolio-item">
+                        <div class="portafolio-placeholder">
+                            <span>Bordado + nombre</span>
+                        </div>
+                    </div>
+                    <div class="portafolio-item">
+                        <div class="portafolio-placeholder">
+                            <span>Bordado en manga</span>
+                        </div>
+                    </div>
+                    <div class="portafolio-item">
+                        <div class="portafolio-placeholder">
+                            <span>Lotes por colores</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a th:href="@{/cotizar}" class="btn-primary btn-large">Solicitar mi cotización</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

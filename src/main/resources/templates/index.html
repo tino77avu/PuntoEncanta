@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: base(~{::content})}">
+<head>
+    <title>PuntoEncanta - Polos Piqué Bordados para tu Marca</title>
+</head>
+<body>
+    <div th:fragment="content">
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Polos Piqué Bordados para tu Marca</h1>
+                    <p class="hero-subtitle">Bordado profesional según tu logo. Ideal para empresas, equipos de trabajo y emprendimientos. Producción por pedido con acabados premium.</p>
+                    <ul class="hero-bullets">
+                        <li>✓ Pedido mínimo: 12 unidades</li>
+                        <li>✓ Colores: mínimo 3 polos por color</li>
+                        <li>✓ Bordado durable y elegante</li>
+                    </ul>
+                    <div class="hero-buttons">
+                        <a th:href="@{/cotizar}" class="btn-primary btn-large">Cotizar ahora</a>
+                        <a th:href="@{/portafolio}" class="btn-secondary btn-large">Ver portafolio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Confianza Section -->
+        <section class="confianza">
+            <div class="container">
+                <div class="confianza-grid">
+                    <div class="confianza-card">
+                        <div class="confianza-icon">⭐</div>
+                        <h3>Calidad Premium</h3>
+                        <p>Tela piqué + bordado prolijo</p>
+                    </div>
+                    <div class="confianza-card">
+                        <div class="confianza-icon">🎨</div>
+                        <h3>Personalización</h3>
+                        <p>Logo, nombre, área/pecho</p>
+                    </div>
+                    <div class="confianza-card">
+                        <div class="confianza-icon">⚡</div>
+                        <h3>Atención rápida</h3>
+                        <p>Respuesta por WhatsApp</p>
+                    </div>
+                    <div class="confianza-card">
+                        <div class="confianza-icon">🏢</div>
+                        <h3>Producción por lote</h3>
+                        <p>Ideal para empresas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clientes Ideales Section -->
+        <section class="clientes-ideales">
+            <div class="container">
+                <h2 class="section-title">Ideal para</h2>
+                <div class="clientes-grid">
+                    <div class="cliente-card">
+                        <div class="cliente-icon">🏢</div>
+                        <h3>Empresas y equipos de trabajo</h3>
+                    </div>
+                    <div class="cliente-card">
+                        <div class="cliente-icon">🎓</div>
+                        <h3>Instituciones y eventos</h3>
+                    </div>
+                    <div class="cliente-card">
+                        <div class="cliente-icon">🍽️</div>
+                        <h3>Restaurantes, tiendas, clínicas</h3>
+                    </div>
+                    <div class="cliente-card">
+                        <div class="cliente-icon">🚀</div>
+                        <h3>Emprendimientos que quieren verse profesionales</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reglas de Pedido Section -->
+        <section class="reglas">
+            <div class="container">
+                <h2 class="section-title">Reglas de pedido</h2>
+                <div class="reglas-content">
+                    <div class="regla-item">
+                        <strong>Pedido mínimo:</strong> 12 polos por orden.
+                    </div>
+                    <div class="regla-item">
+                        <strong>Colores:</strong> mínimo 3 unidades por cada color.
+                    </div>
+                    <div class="regla-item">
+                        <strong>Tallas:</strong> puedes mezclar tallas dentro del mismo color.
+                    </div>
+                    <div class="regla-item">
+                        <strong>Logo:</strong> debe enviarse antes de iniciar (te ayudamos a ajustarlo).
+                    </div>
+                    <div class="regla-item">
+                        <strong>Aprobación:</strong> la producción inicia con aprobación del diseño final.
+                    </div>
+                    <div class="regla-item">
+                        <strong>Cambios:</strong> luego de aprobar el diseño, cambios pueden afectar el plazo/costo.
+                    </div>
+                    <div class="regla-item">
+                        <strong>Producción:</strong> tiempos varían según cantidad y complejidad del bordado.
+                    </div>
+                    <div class="regla-item">
+                        <strong>Pagos:</strong> se confirma el pedido con adelanto (defínelo según tu política).
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: base(~{::content})}">
+<head>
+    <title>Productos - PuntoEncanta</title>
+</head>
+<body>
+    <div th:fragment="content">
+        <!-- Hero Section -->
+        <section class="hero" style="padding: 120px 0 60px;">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Productos</h1>
+                    <p class="hero-subtitle">Polos piqué con acabado elegante, cómodos para uso diario y perfectos para imagen corporativa.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="productos">
+            <div class="container">
+                <h2 class="section-title">Polos Piqué (con cuello)</h2>
+                <p class="section-text">Trabajamos polos piqué con acabado elegante, cómodos para uso diario y perfectos para imagen corporativa.</p>
+                <div class="productos-grid">
+                    <div class="producto-card">
+                        <div class="producto-icon">👔</div>
+                        <h3>Polo piqué clásico</h3>
+                        <p>Hombre / Mujer</p>
+                    </div>
+                    <div class="producto-card">
+                        <div class="producto-icon">👕</div>
+                        <h3>Polo piqué entallado</h3>
+                        <p>Opcional</p>
+                    </div>
+                    <div class="producto-card">
+                        <div class="producto-icon">🧥</div>
+                        <h3>Polo piqué manga larga</h3>
+                        <p>Opcional</p>
+                    </div>
+                    <div class="producto-card">
+                        <div class="producto-icon">📏</div>
+                        <h3>Tallas completas</h3>
+                        <p>Según stock/proveedor</p>
+                    </div>
+                </div>
+                <p class="productos-note">Los colores disponibles dependen del proveedor. Te enviamos catálogo al cotizar.</p>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a th:href="@{/cotizar}" class="btn-primary btn-large">Cotizar ahora</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

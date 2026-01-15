@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: base(~{::content})}">
+<head>
+    <title>Gracias - PuntoEncanta</title>
+</head>
+<body>
+    <div th:fragment="content">
+        <section class="hero" style="padding-top: 150px; padding-bottom: 100px;">
+            <div class="container">
+                <div class="hero-content" style="max-width: 700px;">
+                    <h1 class="hero-title">¡Gracias por tu solicitud!</h1>
+                    <p class="hero-subtitle" style="font-size: 1.2rem; margin-bottom: 2rem;">
+                        Hemos recibido tu solicitud de cotización. Nos pondremos en contacto contigo pronto por WhatsApp para confirmar los detalles de tu pedido.
+                    </p>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
+                        <p style="font-size: 1.1rem; margin-bottom: 1rem;">📱 Te contactaremos por WhatsApp en breve</p>
+                        <p style="font-size: 1.1rem; margin-bottom: 1rem;">⏱️ Tiempo de respuesta: 24-48 horas</p>
+                        <p style="font-size: 1.1rem;">✅ Revisaremos tu logo y te enviaremos una vista previa del bordado</p>
+                    </div>
+                    <div class="hero-buttons">
+                        <a th:href="@{/}" class="btn-primary btn-large">Volver al inicio</a>
+                        <a th:href="@{/portafolio}" class="btn-secondary btn-large">Ver portafolio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

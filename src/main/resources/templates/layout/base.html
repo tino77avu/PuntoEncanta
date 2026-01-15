@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" th:fragment="base (content)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle != null ? pageTitle + ' - PuntoEncanta' : 'PuntoEncanta - Polos Piqué Bordados para tu Marca'}">PuntoEncanta</title>
+    <meta name="description" th:content="${pageDescription != null ? pageDescription : 'Bordado profesional de logos en polos piqué. Ideal para empresas, equipos de trabajo y emprendimientos. Producción por pedido con acabados premium.'}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" th:content="${#httpServletRequest != null ? 'https://' + #httpServletRequest.serverName + #httpServletRequest.requestURI : 'https://puntoencanta.com'}">
+    <meta property="og:title" th:content="${pageTitle != null ? pageTitle + ' - PuntoEncanta' : 'PuntoEncanta - Polos Piqué Bordados para tu Marca'}">
+    <meta property="og:description" th:content="${pageDescription != null ? pageDescription : 'Bordado profesional de logos en polos piqué. Ideal para empresas, equipos de trabajo y emprendimientos. Producción por pedido con acabados premium.'}">
+    <meta property="og:image" th:content="${#httpServletRequest != null ? 'https://' + #httpServletRequest.serverName + '/images/Logo.png' : 'https://puntoencanta.com/images/Logo.png'}">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" th:content="${pageTitle != null ? pageTitle + ' - PuntoEncanta' : 'PuntoEncanta - Polos Piqué Bordados para tu Marca'}">
+    <meta name="twitter:description" th:content="${pageDescription != null ? pageDescription : 'Bordado profesional de logos en polos piqué. Ideal para empresas, equipos de trabajo y emprendimientos. Producción por pedido con acabados premium.'}">
+    <meta name="twitter:image" th:content="${#httpServletRequest != null ? 'https://' + #httpServletRequest.serverName + '/images/Logo.png' : 'https://puntoencanta.com/images/Logo.png'}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" th:href="@{/images/Logo.png}">
+    
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div th:replace="~{fragments/header :: header}"></div>
+    
+    <main>
+        <th:block th:replace="${content}"></th:block>
+    </main>
+    
+    <div th:replace="~{fragments/footer :: footer}"></div>
+    
+    <!-- Botón flotante Cotizar -->
+    <a th:href="@{/cotizar}" class="cotizar-float" aria-label="Cotizar pedido">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19Z" fill="currentColor"/>
+            <path d="M7 7H17V9H7V7ZM7 11H17V13H7V11ZM7 15H14V17H7V15Z" fill="currentColor"/>
+        </svg>
+    </a>
+    
+    <!-- Botón flotante WhatsApp -->
+    <a th:href="@{'https://wa.me/' + ${@environment.getProperty('app.whatsapp.number', '51999999999')}}" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0C7.164 0 0 7.164 0 16c0 2.825.744 5.48 2.044 7.78L0 32l8.47-2.044C10.72 31.256 13.325 32 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 28.8c-2.24 0-4.35-.58-6.19-1.6l-.45-.27-4.69 1.13 1.13-4.56-.27-.45A12.8 12.8 0 0116 3.2c7.074 0 12.8 5.726 12.8 12.8S23.074 28.8 16 28.8z" fill="currentColor"/>
+            <path d="M24.4 19.2c-.32-.16-1.89-.93-2.18-1.04-.29-.11-.5-.16-.71.16-.21.32-.82 1.04-1.01 1.25-.19.21-.38.24-.7.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.15-.15.32-.38.48-.57.16-.19.21-.32.32-.53.11-.21.06-.4-.03-.53-.09-.13-.71-1.71-.97-2.34-.26-.63-.52-.54-.71-.55-.19-.01-.4-.02-.61-.02-.21 0-.55.08-.85.4-.3.32-1.17 1.14-1.17 2.78 0 1.64 1.19 3.22 1.36 3.44.17.22 2.35 3.58 5.7 5.01.8.35 1.42.56 1.9.71.8.25 1.53.22 2.1.13.64-.1 1.89-.77 2.16-1.52.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.61-.37z" fill="currentColor"/>
+        </svg>
+    </a>
+    
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>

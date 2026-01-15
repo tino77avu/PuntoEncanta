@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: base(~{::content})}">
+<head>
+    <title>Bordado & Personalización - PuntoEncanta</title>
+</head>
+<body>
+    <div th:fragment="content">
+        <!-- Hero Section -->
+        <section class="hero" style="padding: 120px 0 60px;">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Bordado & Personalización</h1>
+                    <p class="hero-subtitle">Convertimos tu logo en bordado de alta durabilidad, manteniendo proporción, legibilidad y buena presencia.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="bordado">
+            <div class="container">
+                <h2 class="section-title">Bordado que representa tu marca</h2>
+                <p class="section-text">Convertimos tu logo en bordado de alta durabilidad, manteniendo proporción, legibilidad y buena presencia.</p>
+                <ul class="bordado-list">
+                    <li>✓ Bordado en pecho izquierdo (recomendado)</li>
+                    <li>✓ Bordado en manga (opcional)</li>
+                    <li>✓ Bordado grande espalda (opcional)</li>
+                    <li>✓ Nombres y cargos (opcional)</li>
+                </ul>
+                <div class="bordado-aviso">
+                    <p>💡 Si tu logo está en baja calidad, lo ajustamos para bordado (te enviamos previa).</p>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a th:href="@{/cotizar}" class="btn-primary btn-large">Solicitar cotización</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: base(~{::content})}">
+<head>
+    <title>Cotizar - PuntoEncanta</title>
+</head>
+<body>
+    <div th:fragment="content">
+        <!-- Hero Section -->
+        <section class="hero" style="padding: 120px 0 60px;">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Cotiza tu pedido</h1>
+                    <p class="hero-subtitle">Solicita una cotización personalizada para tu pedido de polos piqué bordados.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cotizar">
+            <div class="container">
+                <h2 class="section-title">Cotiza tu pedido</h2>
+                
+                <!-- Mostrar errores si existen -->
+                <div th:if="${errores != null and !errores.isEmpty()}" class="alert-error" style="max-width: 800px; margin: 0 auto 2rem; background: #fee; border: 2px solid #fcc; padding: 1.5rem; border-radius: 10px; animation: slideDown 0.3s ease-out;">
+                    <h3 style="color: #c00; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>⚠</span>
+                        <span>Por favor, corrige los siguientes errores:</span>
+                    </h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li th:each="error : ${errores}" style="color: #c00; margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0;">•</span>
+                            <span th:text="${error}"></span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Mensaje de éxito si se preservaron valores -->
+                <div th:if="${cotizacion != null and cotizacion.nombre != null and !cotizacion.nombre.isEmpty()}" 
+                     style="max-width: 800px; margin: 0 auto 2rem; background: #efe; border: 2px solid #cfc; padding: 1rem; border-radius: 10px; color: #0a5; font-size: 0.9rem;">
+                    ℹ️ Tus datos se han preservado. Por favor, corrige los errores y vuelve a intentar.
+                </div>
+                
+                <form th:action="@{/cotizar}" th:object="${cotizacion}" method="post" class="cotizar-form" id="cotizarForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre / Empresa *</label>
+                            <input type="text" id="nombre" th:field="*{nombre}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp *</label>
+                            <input type="tel" id="whatsapp" th:field="*{whatsapp}" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cantidadTotal">Cantidad total (mín. 12) *</label>
+                            <input type="number" id="cantidadTotal" th:field="*{cantidadTotal}" min="12" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ubicacion">Ubicación / Ciudad *</label>
+                            <input type="text" id="ubicacion" th:field="*{ubicacion}" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="colores">Colores y cantidades (mín. 3 por color) *</label>
+                        <textarea id="colores" th:field="*{colores}" rows="3" placeholder="Ej: 5 polos azul, 4 polos blanco, 3 polos negro" required></textarea>
+                        <small>Formato: cantidad + color separado por comas. Ejemplos válidos: "5 azul, 4 blanco, 3 negro" o "5 polos azul, 4 polos blanco"</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="tallas">Tallas (opcional)</label>
+                        <textarea id="tallas" th:field="*{tallas}" rows="2" placeholder="Ej: 3 M, 5 L, 4 XL"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="comentarios">Comentarios (ubicación del bordado: pecho/manga/espalda)</label>
+                        <textarea id="comentarios" th:field="*{comentarios}" rows="3" placeholder="Especifica dónde quieres el bordado y cualquier detalle adicional"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="logo">Adjuntar logo</label>
+                        <input type="file" id="logo" name="logo" accept="image/*,.pdf,.ai">
+                        <small>Formatos aceptados: PNG, JPG, PDF, AI</small>
+                    </div>
+                    <button type="submit" class="btn-primary btn-large btn-submit">Enviar cotización</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
