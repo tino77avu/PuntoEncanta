@@ -225,7 +225,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, rgba(26, 77, 58, 0.8) 0%, rgba(45, 107, 79, 0.8) 100%), url('/images/inicio.png');
+    background: linear-gradient(135deg, rgba(26, 77, 58, 0.8) 0%, rgba(45, 107, 79, 0.8) 100%), url('/images/Inicio.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -575,6 +575,7 @@ h1, h2, h3, h4, h5, h6 {
 .pasos-button {
     text-align: center;
 }
+
 
 /* Reglas Section */
 .reglas {
