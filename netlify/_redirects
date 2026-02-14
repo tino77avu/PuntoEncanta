@@ -1,0 +1,8 @@
+# Rutas amigables (sin .html en la URL)
+/polos      /polos.html      200
+/bordado    /bordado.html    200
+/como-pedir /como-pedir.html 200
+/portafolio /portafolio.html 200
+/faq        /faq.html        200
+/cotizar    /cotizar.html    200
+/gracias    /gracias.html    200
